@@ -1,0 +1,28 @@
+{
+  "name": "firstnpmpackage",
+  "version": "1.0.0",
+  "description": "gibbon's first npm package",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gibbon-cn/classRoom.git"
+  },
+  "keywords": [
+    "learningnpm"
+  ],
+  "author": "gibbon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gibbon-cn/classRoom/issues"
+  },
+  "homepage": "https://github.com/gibbon-cn/classRoom#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "typescript": "^3.4.5"
+  }
+}
