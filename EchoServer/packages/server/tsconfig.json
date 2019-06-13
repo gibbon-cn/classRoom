@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "commonjs",
+		"outDir": "dist",
+		"declaration": true,
+		"sourceMap": true
+	}
+}

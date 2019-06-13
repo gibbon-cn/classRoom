@@ -1,0 +1,19 @@
+{
+  "name": "echo_service",
+  "version": "1.0.0",
+  "description": "Class room application for httpserver, wssserver and webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gibbon-cn/classRoom.git"
+  },
+  "author": "gibbon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gibbon-cn/classRoom/issues"
+  },
+  "homepage": "https://github.com/gibbon-cn/classRoom#readme"
+}
