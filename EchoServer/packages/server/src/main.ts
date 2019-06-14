@@ -2,6 +2,9 @@ import * as http from "http";
 import * as express from "express";
 import * as httpolyglot from "httpolyglot";
 import * as commander from "commander";
+import * as expressStaticGzip from "express-static-gzip";
+import * as path from "path";
+import { stat } from "fs";
 
 (async (): Promise<void> => {
     commander
@@ -16,6 +19,13 @@ import * as commander from "commander";
     };
         
     const app = express();
+
+    /// 静态文件服务路径 build/web
+    const baseDir = path.join(__dirname, "../..");
+    console.log("web path: " + path.join(baseDir, "web/dist"));
+    const staticGzip = expressStaticGzip(path.join(baseDir, "web/dist"));
+    app.use(staticGzip);
+
     app.get("/echo", (req, res, next) => {
         var m = req.query["m"];
         return res.status(200).send(m);
