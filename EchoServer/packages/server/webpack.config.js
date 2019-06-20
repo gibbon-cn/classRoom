@@ -22,5 +22,10 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    "plugins": [
+        new webpack.DefinePlugin({
+            "process.env.BUILD_DIR": `"${__dirname.replace(/\\/g, "\\\\")}"`
+        }),
+    ],    
 }

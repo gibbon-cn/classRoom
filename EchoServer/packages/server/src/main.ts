@@ -21,22 +21,23 @@ import * as ws from "ws";
     const app = express();
 
     /// 静态文件服务路径 build/web
-    const baseDir = path.join(__dirname, "../..");
+    const buildDir = process.env.BUILD_DIR ? path.resolve(process.env.BUILD_DIR, "..") : "";
+    const baseDir = buildDir || path.join(__dirname, "..");
     console.log("web path: " + path.join(baseDir, "web/dist"));
 
-    if (process.env.NODE_ENV == "development") {
-        const webpackDevMiddleware = require("webpack-dev-middleware");
-        const webpackConfig = require(path.resolve(__dirname, "..", "..", "web", "webpack.dev.config.js"));
-        const compiler = require("webpack")(webpackConfig);
-        app.use(
-            webpackDevMiddleware(compiler, {
-                //绑定中间件的公共路径,与webpack配置的路径相同
-                publicPath: webpackConfig.output.publicPath,
-                quiet: true  //向控制台显示任何内容 
-            })
-        );
-        app.use(require("webpack-hot-middleware")(compiler));
-    }
+    // if (process.env.NODE_ENV == "development") {
+    //     const webpackDevMiddleware = require("webpack-dev-middleware");
+    //     const webpackConfig = require(path.resolve(__dirname, "..", "..", "web", "webpack.dev.config.js"));
+    //     const compiler = require("webpack")(webpackConfig);
+    //     app.use(
+    //         webpackDevMiddleware(compiler, {
+    //             //绑定中间件的公共路径,与webpack配置的路径相同
+    //             publicPath: webpackConfig.output.publicPath,
+    //             quiet: true  //向控制台显示任何内容 
+    //         })
+    //     );
+    //     app.use(require("webpack-hot-middleware")(compiler));
+    // }
 
 
     const staticGzip = expressStaticGzip(path.join(baseDir, "web/dist"));
