@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gibbon-cn/classRoom/issues"
   },
-  "homepage": "https://github.com/gibbon-cn/classRoom#readme"
+  "homepage": "https://github.com/gibbon-cn/classRoom#readme",
+  "dependencies": {
+    "webpack-dev-middleware": "^3.7.0"
+  }
 }
