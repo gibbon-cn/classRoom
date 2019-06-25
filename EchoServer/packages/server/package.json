@@ -3,7 +3,7 @@
     "main": "./dist/server.js",
     "files": [],
     "scripts": {
-        "debug": "cross-env NODE_ENV=development node --require ts-node/register --inspect=5870 ./src/main.ts --port=8080 --host=127.0.0.1",
+        "debug": "cross-env NODE_ENV=development node --require ts-node/register --inspect=5870 ./src/main.ts --port=8080 --host=0.0.0.0",
         "debug:brk": "cross-env NODE_ENV=development node --require ts-node/register --inspect-brk=5870 ./src/main.ts --port=8080 --host=127.0.0.1",
         "build": "rm -rf ./dist && cross-env NODE_ENV=production webpack --config ./webpack.config.js",
         "start": "cross-env NODE_ENV=production node ./dist/main.js --port=8080 --host=127.0.0.1"

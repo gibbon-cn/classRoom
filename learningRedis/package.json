@@ -1,0 +1,23 @@
+{
+  "name": "learningredis",
+  "version": "1.0.0",
+  "description": "learning redis",
+  "main": "main.ts",
+  "scripts": {
+    "start": "node --require ts-node/register src/main.ts",
+    "test": "tsc --build ./tsconfig.json && mocha"
+  },
+  "author": "gibbon",
+  "license": "ISC",
+  "dependencies": {
+    "redis": "^2.8.0",
+    "util": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.0.10",
+    "mocha": "^6.1.4",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
+  }
+}
